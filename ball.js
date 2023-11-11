@@ -14,7 +14,7 @@ export class Ball {
             this.vx *= -1;
             this.x += this.vx;
         }
-        if (this.y <= this.radius || this.y >= stageHeight - this.radius) {
+        if (this.y <= this.radius) {
             this.vy *= -1;
             this.y += this.vy;
         }
@@ -26,8 +26,8 @@ export class Ball {
         ctx.fill();
         ctx.closePath();
 
-        if(this.y + this.radius >= stageHeight) {
-            console.log("Game Over");
+        if(this.y >= stageHeight - this.radius) {
+            alert("Game Over");
         }
     }
 
